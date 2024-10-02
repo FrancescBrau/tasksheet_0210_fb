@@ -17,23 +17,22 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const _AppHomeState(),
+      home: const AppHome(),
     );
   }
 }
 
-class _AppHomeState extends StatefulWidget {
-  // ignore: unused_element
-  const _AppHomeState({super.key});
+class AppHome extends StatefulWidget {
+  const AppHome({super.key});
 
   @override
-  State<_AppHomeState> createState() => _AppHomeStateState();
+  State<AppHome> createState() => _AppHomeState();
 }
 
-class _AppHomeStateState extends State<_AppHomeState> {
+class _AppHomeState extends State<AppHome> {
   int currentIndex = 0;
 
-  final List<Widget> widgets = [
+  final List<Widget> screens = [
     const NewsWidget(),
     const LikesWidget(),
     const ProfileWidget(),
@@ -43,9 +42,10 @@ class _AppHomeStateState extends State<_AppHomeState> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My App - Aufgabe 1'),
+        title: const Text('My App'),
         backgroundColor: const Color.fromARGB(255, 163, 207, 227),
       ),
+      body: screens[currentIndex],
       bottomNavigationBar: NavigationBar(
         selectedIndex: currentIndex,
         onDestinationSelected: (int index) {
@@ -54,12 +54,11 @@ class _AppHomeStateState extends State<_AppHomeState> {
           });
         },
         destinations: const [
-          NavigationDestination(icon: Icon(Icons.newspaper), label: "News"),
-          NavigationDestination(icon: Icon(Icons.favorite), label: "Likes"),
-          NavigationDestination(icon: Icon(Icons.person), label: "Profile"),
+          NavigationDestination(icon: Icon(Icons.newspaper), label: 'News'),
+          NavigationDestination(icon: Icon(Icons.favorite), label: 'Likes'),
+          NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
         ],
       ),
-      body: widgets[currentIndex],
     );
   }
 }
