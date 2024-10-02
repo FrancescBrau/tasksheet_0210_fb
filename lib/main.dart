@@ -42,7 +42,7 @@ class _AppHomeState extends State<AppHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My App'),
+        title: const Text('My App', selectionColor: Colors.grey),
         backgroundColor: const Color.fromARGB(255, 163, 207, 227),
       ),
       body: screens[currentIndex],
