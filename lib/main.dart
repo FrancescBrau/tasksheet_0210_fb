@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'news_widget.dart';
+import 'likes_widget.dart';
+import 'profile_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -57,87 +60,6 @@ class _AppHomeStateState extends State<_AppHomeState> {
         ],
       ),
       body: widgets[currentIndex],
-    );
-  }
-}
-
-class NewsWidget extends StatelessWidget {
-  const NewsWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'News',
-            style: TextStyle(fontSize: 32),
-          ),
-          SizedBox(height: 20),
-          Icon(
-            Icons.newspaper,
-            size: 80,
-            color: Colors.black, // Corregido
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class LikesWidget extends StatelessWidget {
-  const LikesWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text(
-            "Likes",
-            style: TextStyle(fontSize: 32),
-          ),
-          SizedBox(height: 16),
-          Text(
-            "Hier findest du deine gelikten Nachrichten.",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.grey,
-            ),
-          )
-        ],
-      ),
-    );
-  }
-}
-
-class ProfileWidget extends StatelessWidget {
-  const ProfileWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          Text("Profile", style: TextStyle(fontSize: 32)),
-          SizedBox(height: 20),
-          Icon(
-            Icons.person,
-            size: 80,
-            color: Colors.black,
-          ),
-          SizedBox(height: 16),
-          Text(
-            "Max Mustermann",
-            style: TextStyle(
-                fontSize: 32, fontWeight: FontWeight.bold, color: Colors.black),
-          ),
-        ],
-      ),
     );
   }
 }
